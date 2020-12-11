@@ -1,1 +1,7 @@
-<p>blog-list works!</p>
+<ng-container *ngIf="blogPosts?.length !== 0">
+    <div *ngFor="let blogItem of blogPosts">
+        <a [routerLink]="'/blog/'+blogItem.id">
+            {{ blogItem.title }}
+        </a>
+    </div>
+</ng-container>
