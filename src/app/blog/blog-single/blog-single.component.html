@@ -1,1 +1,15 @@
-<p>blog-single works!</p>
+<mat-card *ngIf="blogPost">
+    <mat-card-header>
+        <mat-card-title>{{ blogPost?.title | uppercase }}</mat-card-title>
+        <mat-card-subtitle>{{ blogPost?.created_at | date:'dd.MM.yyyy' }}</mat-card-subtitle>
+    </mat-card-header>
+    <img *ngIf="blogPost.image?.url"
+      mat-card-image
+      [src]="apiUrl + blogPost.image.url"
+      [alt]="blogPost.title">
+    <mat-card-content>
+        <p>
+            {{ blogPost?.description }}
+        </p>
+    </mat-card-content>
+</mat-card>

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BlogComponent } from './blog.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogSingleComponent } from './blog-single/blog-single.component';
+import { UiModule } from '../ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BlogSingleComponent } from './blog-single/blog-single.component';
   ],
   imports: [
     CommonModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    UiModule
   ]
 })
 export class BlogModule { }

@@ -1,5 +1,5 @@
-<ng-container *ngIf="(blogPosts$ | async)?.length !== 0">
-    <div *ngFor="let blogItem of (blogPosts$ | async)">
+<ng-container *ngIf="(blogPosts$ | async) as blogPosts">
+    <div *ngFor="let blogItem of blogPosts">
         <a [routerLink]="'/blog/'+blogItem.id">
             {{ blogItem.title }} || {{ blogItem?.created_at | date:'(dd.MM.yyyy | HH:mm)' }}
         </a>

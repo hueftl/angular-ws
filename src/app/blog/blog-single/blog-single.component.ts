@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/services/blog/blog.interface';
 import { BlogService } from 'src/app/services/blog/blog.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-blog-single',
@@ -12,6 +13,7 @@ export class BlogSingleComponent implements OnInit {
 
   private id: string = '';
 
+  apiUrl = environment.apiUrl;
   blogPost: Post = <Post>{};
 
   constructor(private activatedRoute: ActivatedRoute, private blogService: BlogService) {
