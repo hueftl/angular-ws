@@ -1,3 +1,4 @@
+import { BlogRoutingModule } from './blog-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,9 +14,7 @@ import { BlogSingleComponent } from './blog-single/blog-single.component';
   ],
   imports: [
     CommonModule,
-  ],
-  exports: [
-    BlogComponent
+    BlogRoutingModule
   ]
 })
 export class BlogModule { }
