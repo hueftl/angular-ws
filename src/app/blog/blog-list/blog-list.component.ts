@@ -1,5 +1,7 @@
 import { BlogService } from './../../services/blog/blog.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Post } from './../../services/blog/blog.interface';
 
 @Component({
   selector: 'app-blog-list',
@@ -8,15 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogListComponent implements OnInit {
 
-  blogPosts: any[] = [];
+  blogPosts$: Observable<Post[]> = new Observable();
 
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.loadBlogPost();
-  }
-
-  loadBlogPost(): void {
-    this.blogService.getList().subscribe(blogPosts => this.blogPosts = blogPosts);
+    this.blogPosts$ = this.blogService.getList();
   }
 }
