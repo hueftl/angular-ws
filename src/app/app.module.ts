@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UiModule } from './ui/ui.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -22,7 +23,8 @@ import { UiModule } from './ui/ui.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    UiModule
+    UiModule,
+    ReactiveFormsModule
   ],
   providers: [], // services, intercepter
   bootstrap: [AppComponent]
